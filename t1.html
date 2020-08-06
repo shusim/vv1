@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}<br> <input v-model="mydata" /> {{mydata}}
+        <div v-text="mytext"></div>
+        <div v-html="myhtml"></div>
+    </div>
+
+    <script>
+        //创建Vue实例,得到 ViewModel
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: "数据",
+                mydata: "绑定数据",
+                mytext: "我的数据text",
+                myhtml: "<h1>我的标题</h1>"
+            },
+            methods: {}
+        });
+        console.log(vm);
+
+        function test(fruit) {
+            // 把条件提取到数组中
+            const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries']
+            if (redFruits.includes(fruit)) {
+                console.log('red');
+            }
+        }
+        test("apple");
+    </script>
+</body>
+
+</html>
